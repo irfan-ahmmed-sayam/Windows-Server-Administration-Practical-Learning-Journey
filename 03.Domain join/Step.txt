@@ -1,8 +1,0 @@
-Step 1: Verify Server 1
-Server 1 → Server Manager → Tools → Active Directory Users and Computers → abc.com → Computers → Server 2 is not domain joined.
-
-Step 2: Join Server 2 to Domain
-Server 2 → PowerShell → ping 192.168.10.1 → ping Server1.ABC.com → Win + R → sysdm.cpl → Change → Member of = Domain → Enter abc.com → OK → Administrator Credentials → OK → OK → Close → Restart Now.
-
-Step 3: Verify Domain Join
-Server 1 → ABC.com → Computers → Refresh → Verify Server 2 appears in the domain.
