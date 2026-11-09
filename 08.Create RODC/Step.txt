@@ -1,26 +1,31 @@
-## ⚙️ Configuration Steps: RODC Creation & Installation
+Day 08 | Windows Server 2016 | RODC Creation & Installation
 
-### Step 1: Create RODC User
-Server 1 → Server Manager → Tools → Active Directory Users and Computers → Users
+In this lab, I created and installed a Read-Only Domain Controller (RODC). I pre-created the RODCUser account in Active Directory, installed AD DS on Server 2, promoted it as an RODC in the abc.com domain, and verified the configuration.
 
-Right-click Users → New → User → Enter Name: **RODC User** → Next → Set Password → Next → Finish
+🎥 YouTube Video: [https://youtu.be/JZoycPVpciM]
 
-### Step 2: Create RODC Account
-Server 1 → Active Directory Users and Computers → Domain Controllers
+Create RODC User
+Server 1 > Server Manager > Tools > Active Directory Users and Computers > Users
 
-Right-click Domain Controllers → Pre-Create Read-only Domain Controller Account → ✔ Use advanced mode installation → Next → Next → Enter Computer Name: **Server 2** → Next → Next → Next → Next → Select User: **RODC User** → Next → Next → Finish
+-Right-click Users > New > User > Enter Name: RODCUser > Next > Set Password > Next > Finish
 
-- Server 2 appears in Domain Controllers with a down status.
+-Create RODC Account
+Server 1 > Active Directory Users and Computers > Domain Controllers
 
-### Step 3: Install Active Directory Domain Services
-Server 2 → Server Manager → Add Roles and Features → Next → Next → Next → ✔ Active Directory Domain Services → Add Features → Next → Next → Next → Install
+Right-click Domain Controllers > Pre-Create Read-only Domain Controller Account > ✔ Use advanced mode installation > Next > Next > Enter Computer Name: Server2 > Next > Next > Next > Next > Select User: RODCUser > Next > Next > Finish
 
-### Step 4: Promote Server 2 as RODC
-Server 2 → Server Manager → Notifications → Promote this server to a domain controller → Add a domain controller to an existing domain → Domain: **ABC.com** → Change → Enter RODC User credentials (ABC.com\RODC User) → OK → Next → Set Directory Services Restore Mode (DSRM) Password → Next → Next → Next → Install → Close
+Server 2 appears in Domain Controllers with a down status.
 
-- Server 2 restarts automatically.
+Install Active Directory Domain Services
+Server 2 > Server Manager > Add Roles and Features > Next > Next > Next > ✔ Active Directory Domain Services > Add Features > Next > Next > Next > Install
+Promote Server 2 as RODC
+Server 2 > Server Manager > Notifications > Promote this server to a domain controller > Add a domain controller to an existing domain > Domain: abc.com > Change > Enter RODCUser credentials (abc.com\RODCUser) > OK > Next > Set Directory Services Restore Mode (DSRM) Password > Next > Next > Next > Install > Close
+Server 2 restarts automatically.
+Verify RODC Configuration
+Server 1 > Server Manager > Tools > Active Directory Users and Computers > Domain Controllers > Refresh
 
-### Step 5: Verify RODC Configuration
-Server 1 → Server Manager → Tools → Active Directory Users and Computers → Domain Controllers → Refresh
+Verify Server 2 appears as a Read-Only Domain Controller (RODC)
 
-- Verify that Server 2 appears as a Read-Only Domain Controller (RODC).
+Another important practical step in my Windows Server Administration journey, focused on deploying Read-Only Domain Controllers for secure and controlled environments.
+
+#WindowsServer2016 #ActiveDirectory #RODC #ReadOnlyDomainController #DomainController #SystemAdministration #ITInfrastructure #LearningJourney
