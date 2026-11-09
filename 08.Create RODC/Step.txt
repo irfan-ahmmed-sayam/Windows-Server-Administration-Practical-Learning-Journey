@@ -1,0 +1,26 @@
+## ⚙️ Configuration Steps: RODC Creation & Installation
+
+### Step 1: Create RODC User
+Server 1 → Server Manager → Tools → Active Directory Users and Computers → Users
+
+Right-click Users → New → User → Enter Name: **RODC User** → Next → Set Password → Next → Finish
+
+### Step 2: Create RODC Account
+Server 1 → Active Directory Users and Computers → Domain Controllers
+
+Right-click Domain Controllers → Pre-Create Read-only Domain Controller Account → ✔ Use advanced mode installation → Next → Next → Enter Computer Name: **Server 2** → Next → Next → Next → Next → Select User: **RODC User** → Next → Next → Finish
+
+- Server 2 appears in Domain Controllers with a down status.
+
+### Step 3: Install Active Directory Domain Services
+Server 2 → Server Manager → Add Roles and Features → Next → Next → Next → ✔ Active Directory Domain Services → Add Features → Next → Next → Next → Install
+
+### Step 4: Promote Server 2 as RODC
+Server 2 → Server Manager → Notifications → Promote this server to a domain controller → Add a domain controller to an existing domain → Domain: **ABC.com** → Change → Enter RODC User credentials (ABC.com\RODC User) → OK → Next → Set Directory Services Restore Mode (DSRM) Password → Next → Next → Next → Install → Close
+
+- Server 2 restarts automatically.
+
+### Step 5: Verify RODC Configuration
+Server 1 → Server Manager → Tools → Active Directory Users and Computers → Domain Controllers → Refresh
+
+- Verify that Server 2 appears as a Read-Only Domain Controller (RODC).
