@@ -1,0 +1,2 @@
+SELECT * FROM Win32_ComputerSystem
+WHERE TotalPhysicalMemory <= 2147483648
