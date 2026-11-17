@@ -17,6 +17,13 @@ All topics will be documented with step-by-step configurations, commands, screen
 - YouTube: [PlayList](https://www.youtube.com/playlist?list=PLIEgi_iIRtLI)
 - In this playlist, I cover all the Windows Server topics listed here.
 
+## 💿 Windows Server 2016 ISO Download
+
+To follow this practical learning journey, download the Windows Server 2016 ISO
+
+**Download:** [Windows Server 2016 ISO](https://drive.google.com/file/d/1QbZ6mKfjmOgukNizhSrANBLZcuj0xzjU/view?usp=drivesdk)
+
+
 ## 🎯 Objectives
 
 - Understand Windows Server installation and configuration.
