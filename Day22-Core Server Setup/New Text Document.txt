@@ -1,0 +1,25 @@
+d:
+
+dir
+
+.\setup64.exe
+
+Get-NetFirewallProfile
+
+Get-NetFirewallProfile | FL Name,Enabled
+
+Set-NetFirewallProfile -Name Domain,Public,Private -Enabled False
+
+Get-NetAdapter
+
+New-NetIPAddress -InterfaceIndex 3 -IPAddress 192.168.10.50 -PrefixLength 24 -DefaultGateway 192.168.10.254
+
+Set-DNSClientServerAddress -InterfaceIndex 3 -ServerAddresses ("192.168.10.1","192.168.10.2")
+
+hostname
+
+Rename-Computer -NewName CLI1 -Restart
+
+Get-TimeZone
+
+Set-TimeZone -ID "Bangladesh Standard Time"
